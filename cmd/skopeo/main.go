@@ -50,6 +50,9 @@ func requireSubcommand(cmd *cobra.Command, args []string) error {
 	return fmt.Errorf("Missing command '%[1]s COMMAND'\nTry '%[1]s --help' for more information", cmd.CommandPath())
 }
 
+/*
+ * [+] create root cobra command and register sub-commands
+ */
 // createApp returns a cobra.Command, and the underlying globalOptions object, to be run or tested.
 func createApp() (*cobra.Command, *globalOptions) {
 	opts := globalOptions{}
@@ -123,7 +126,11 @@ func (opts *globalOptions) before(cmd *cobra.Command, args []string) error {
 	return nil
 }
 
+/*
+ * [+] main (starting) function
+ */
 func main() {
+	fmt.Println("Hello Skopeo!")
 	if reexec.Init() {
 		return
 	}

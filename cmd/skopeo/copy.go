@@ -119,6 +119,10 @@ func parseMultiArch(multiArch string) (copy.ImageListSelection, error) {
 	}
 }
 
+/*
+ * [+] handle copy command
+ * @args: arguments of copy function
+ */
 func (opts *copyOptions) run(args []string, stdout io.Writer) (retErr error) {
 	if len(args) != 2 {
 		return errorShouldDisplayUsage{errors.New("Exactly two arguments expected")}
